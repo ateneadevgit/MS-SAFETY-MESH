@@ -1,0 +1,37 @@
+server:
+  port: 8019
+
+logging:
+  file:
+    name: /fusm-logs/safety-mesh.log
+
+spring:
+  datasource:
+    url: jdbc:postgresql://${db-config.domain}/${db-config.name}
+    username: ${db-config.user}
+    password: ${db-config.password}
+    driver-class-name: org.postgresql.Driver
+
+    hikari:
+      maximum-pool-size: 10
+      minimum-idle: 1
+      idle-timeout: 30000
+      connection-timeout: 20000
+      validation-timeout: 5000
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+
+  profiles:
+    active: prod
+
+ms-safety-mesh:
+  module:
+    path: /api/v1/module
+  permission:
+    path: /api/v1/permission
+  role:
+    path: /api/v1/role
+  column:
+    path: /api/v1/column

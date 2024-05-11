@@ -1,0 +1,5 @@
+db-config:
+  domain: db-safety-mesh:5432
+  name: atenea_safety_mesh
+  user: postgres
+  password: VA@Atenea2023
